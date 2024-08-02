@@ -57,7 +57,7 @@ def main():
     st.title("Cricket Match Score Prediction System")
     
     # Load and preprocess data
-    dataset = load_data('data/t20.csv')
+    dataset = load_data('data/ipl.csv')
     X_train, X_test, y_train, y_test, preprocessor = preprocess_data(dataset)
     
     # Define and train the model
