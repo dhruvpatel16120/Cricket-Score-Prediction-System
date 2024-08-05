@@ -27,7 +27,7 @@ The Cricket Match Score Prediction System is a machine learning application desi
 ## Installation
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/yourusername/cricket-score-prediction.git
+    git clone https://github.com/dhruvpatel16120/cricket-score-prediction.git
     cd cricket-score-prediction
     ```
 
