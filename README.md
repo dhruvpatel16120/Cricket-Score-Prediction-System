@@ -48,7 +48,7 @@ The Cricket Match Score Prediction System is a machine learning application desi
 ## Usage
 1. **Run the Streamlit app:**
     ```bash
-    streamlit run Cricket Score Prediction.py
+    streamlit run Cricket-Score-Prediction.py
     ```
 
 2. **Open your browser:**
