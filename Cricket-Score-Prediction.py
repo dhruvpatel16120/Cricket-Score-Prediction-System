@@ -180,7 +180,7 @@ def main():
         }
         </style>
         <div class="footer">
-            Created By <a href="https://dhruvpatelofficial.vercel.app" target="_blank">Dhruv Patel</a>, Ansh Patel, Shaimindrasinh
+            Created By <a href="https://dhruvpatelofficial.vercel.app" target="_blank">Dhruv Patel, Ansh Patel, Shaimindrasinh</a>
         </div>
         """,
         unsafe_allow_html=True
