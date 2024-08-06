@@ -43,7 +43,7 @@ The Cricket Match Score Prediction System is a machine learning application desi
     ```
 
 4. **Ensure the dataset file is available:**
-    Place your `t20.csv` or `data/odi.csv` file in the appropriate directory.
+    Place your `ipl.csv` file in the appropriate directory.
 
 ## Usage
 1. **Run the Streamlit app:**
