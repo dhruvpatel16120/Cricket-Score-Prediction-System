@@ -61,14 +61,14 @@ def add_features(df):
     return df
 
 def main():
-    st.title("🏏 Cricket Final Score Predictor (Realistic & Fast 🚀)")
+    st.title("🏏 Cricket Final Score Predictor 🚀")
 
     dataset = load_data('data/ipl.csv')
     model, preprocessor = load_model_and_preprocessor()
 
     # Sidebar user input
     st.sidebar.header('📝 Match Input')
-    over = st.sidebar.number_input('Overs Played', 0.1, 19.6, 15.0, step=0.1)
+    over = st.sidebar.number_input('Overs Played', 1, 19, 15, step=1)
     runs = st.sidebar.number_input('Current Runs', 0, 300, 130)
     wickets = st.sidebar.number_input('Wickets Lost', 0, 10, 3)
     venue = st.sidebar.selectbox('Venue', sorted(dataset['venue'].unique()))
@@ -84,18 +84,18 @@ def main():
         'bat_team': [bat_team],
         'bowl_team': [bowl_team]
     })
-    user_input = add_features(user_input)
+    User_input = add_features(user_input)
 
     # Show input
     st.write("### 📋 Match Situation")
     st.markdown('<div class="match-table">', unsafe_allow_html=True)
-    st.table(user_input)
+    st.table(user_input[['over', 'runs', 'wickets', 'venue', 'bat_team', 'bowl_team']])
     st.markdown('</div>', unsafe_allow_html=True)
 
     # Predict final score (min, mean, max)
     if st.button('🔮 Predict Final Score (Min / Max / Avg)'):
         try:
-            transformed = preprocessor.transform(user_input)
+            transformed = preprocessor.transform(User_input)
             staged_preds = list(model.staged_predict(transformed))
             staged_preds = np.array([p[0] for p in staged_preds])
 
@@ -118,7 +118,7 @@ def main():
                 next_over = current_over + i
                 if next_over > 20:
                     break
-                temp = user_input.copy()
+                temp = User_input.copy()
                 temp['over'] = next_over
                 temp = add_features(temp)
                 temp_transformed = preprocessor.transform(temp)
